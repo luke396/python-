@@ -1,0 +1,37 @@
+#-*- coding:utf-8 -*-
+# if循环只能针对一部分代码一次循环，而while则可以一直循环，直到不满足条件。
+current_number = 1
+while current_number <= 5:
+    print(current_number)
+    current_number += 1 #current_number = current_number + 1 的简写
+    
+#让用户选择何时退出
+prompt = "\nTell me something, and I will repeat it back to you:"
+prompt +="\nEnter 'quit' to end the program."
+message = ""  #给while一个可以比较的东西，要不无法运行。
+while message != 'quit':
+    message = input(prompt)
+    
+    if message != 'quit':
+        print(message)
+#这样避免离开的时候还显示quit
+
+prompt = "\nTell me something, and I will repeat it back to you:"
+prompt +="\nEnter 'quit' to end the program."
+
+active = True 
+while active:
+    message = input(prompt)
+    
+    if message == 'quit':
+        active = False
+    else:
+        print(message)
+#改进版 添加一个叫标志的变量-active（随便叫啥），只需判断标志变量的状态。
+#在一些事件导致标志变量为False时停止循环。
+#在改进版当中，很容易添加elif语句使得标志改变。
+
+
+
+#使用break退出循环
+#可以立即
